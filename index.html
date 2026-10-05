@@ -74,7 +74,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offs
 
 <h1>A free, five-minute book summary that arrives in the part of your day you choose.</h1>
 <p class="lede">Lantern helps you decide which classic to read next. It is a small, free, personal project. The books are public domain. The summaries are AI-written and checked against the original text.</p>
-<div class="status"><span class="dot"></span> Building: delivery (slice 2 of 5)</div>
+<div class="status"><span class="dot"></span> Building: Telegram (slice 3 of 5)</div>
 <div class="updated" id="updated">Last updated 6 Oct 2026</div>
 
 <h2>How it will work</h2>
@@ -97,8 +97,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offs
 
 <h2>Right now</h2>
 <div class="now-box">
-  <h3>Slice 2: delivery</h3>
-  <p style="font-size:16px;color:var(--ink-2)">Choosing a book, scheduling delivery into your window, and reading the summary. Built and tested before any real reader sees it.</p>
+  <h3>Slice 3: Telegram</h3>
+  <p style="font-size:16px;color:var(--ink-2)">Linking your Telegram account and receiving summaries directly in chat. Built and tested before any real reader sees it.</p>
   <ul id="now"></ul>
 </div>
 
@@ -121,19 +121,20 @@ const PATH=[
  ["done","4 Oct 2026","Design and architecture","Ten screens, the email and Telegram templates, and the technical plan with its security review."],
  ["done","4 Oct 2026","Foundations built","Repository, test harness, event store, deployment scripts, nightly encrypted backups. Reviewed by an independent model."],
  ["done","6 Oct 2026","Slice 1 · Sign-in and onboarding","Landing page, invite codes, magic-link sign-in, consent, delivery window and timezone."],
- ["now","in progress","Slice 2 · Delivery","Catalogue, requesting a book, scheduling into your window, email delivery, the reading page."],
- ["next","","Slice 3 · Telegram","Link your Telegram and receive summaries there."],
+ ["done","6 Oct 2026","Slice 2 · Delivery","Catalogue, requesting a book, scheduling into your window, email delivery, the reading page."],
+ ["now","in progress","Slice 3 · Telegram","Link your Telegram and receive summaries there."],
  ["next","","Slice 4 · Streaks and ratings","Finish, rate, keep a streak, opt in to a small leaderboard."],
  ["next","","Slice 5 · Settings and deletion","Pause, change window, unsubscribe, delete everything."],
  ["next","","Alpha","Friends and family invited. Fourteen days of evidence, then a decision."]
 ];
 const NOW=[
- ["ok","Twelve titles loaded and cleared for rights, with three checked pilot summaries"],
- ["ok","Catalogue, book details, status banners and clean reading page"],
- ["ok","Request queue and scheduling into morning, midday, evening or wind-down windows"],
- ["ok","Email delivery with quiet-hours protection and one-click unsubscribe"],
- ["ok","Twelve acceptance tests and an independent code review"],
- ["","First deployment to our own server, internal accounts only"]
+ ["ok","Telegram bot connected to receive and answer messages"],
+ ["ok","Account linking with deep link and manual code fallback"],
+ ["ok","Summary delivery on Telegram with automatic fallback to email"],
+ ["ok","Unlink option in account settings and stop command in chat"],
+ ["ok","Automated acceptance tests and independent code review"],
+ ["wip","Account linking verification on a real phone"],
+ ["","Confirmation of pilot delivery to a real inbox"]
 ];
 const TEAM=[["Tyrion","Chief of Staff & Orchestrator"],["Varys","Program Manager"],["Sansa","Senior Product Manager"],["Arya","Frontend Engineer"],["Gendry","Backend Engineer"],["Bran","Principal Architect"],["Jon","Privacy & Security Officer"],["Brienne","QA & Validation Lead"],["Samwell","Content & Rights Lead"],["Margaery","Growth & Marketing Lead"],["Missandei","Product Designer (UX/UI)"]];
 document.getElementById("path").innerHTML=PATH.map(([s,w,t,d])=>`<li class="${s}"><span class="lamp"></span><div class="when">${w}</div><h3>${t}<span class="pill">${s==="done"?"Done":s==="now"?"Building":"Next"}</span></h3><p>${d}</p></li>`).join("");
