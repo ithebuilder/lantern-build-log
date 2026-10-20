@@ -90,8 +90,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offs
 
 <h1>Five-minute classic book summaries, on your schedule.</h1>
 <p class="lede">A free summary arrives in the part of your day you choose. Lantern helps you decide which classic to read next. It is a small, free, personal project. The books are public domain. The summaries are AI-written and checked against the original text.</p>
-<div class="status"><span class="dot"></span> Building: Telegram (slice 3 of 5)</div>
-<div class="updated" id="updated">Last updated 7 Oct 2026</div>
+<div class="status"><span class="dot"></span> Building: Settings and deletion (slice 5 of 6)</div>
+<div class="updated" id="updated">Last updated 20 Oct 2026</div>
 
 <h2>How it will work</h2>
 <div class="steps">
@@ -113,8 +113,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offs
 
 <h2>Right now</h2>
 <div class="now-box">
-  <h3>Slice 3: Telegram</h3>
-  <p class="now-desc">Linking your Telegram account and receiving summaries directly in chat. Built and tested before any real reader sees it.</p>
+  <h3>Slice 5: Settings and deletion</h3>
+  <p class="now-desc">Your account in one place: pause delivery, unsubscribe, delete your account and data, and soon choose your daily window and timezone.</p>
   <ul id="now"></ul>
 </div>
 
@@ -144,20 +144,20 @@ const PATH=[
  ["done","4 Oct 2026","Foundations built","Repository, test harness, event store, deployment scripts, nightly encrypted backups. Reviewed by an independent model."],
  ["done","6 Oct 2026","Slice 1 · Sign-in and onboarding","Landing page, invite codes, magic-link sign-in, consent, delivery window and timezone."],
  ["done","6 Oct 2026","Slice 2 · Delivery","Catalogue, requesting a book, scheduling into your window, email delivery, the reading page."],
- ["now","in progress","Slice 3 · Telegram","Link your Telegram and receive summaries there."],
- ["next","","Slice 4 · Streaks and ratings","Finish, rate, keep a streak, opt in to a small leaderboard."],
- ["next","","Slice 5 · Settings and deletion","Pause, change window, unsubscribe, delete everything."],
+ ["done","17 Oct 2026","Slice 3 · Telegram","Link your Telegram and receive your summaries there."],
+ ["done","17 Oct 2026","Slice 4 · Streaks and the leaderboard","Finish a book, keep a reading streak, and opt in to a small leaderboard."],
+ ["now","in progress","Slice 5 · Settings and deletion","Pause delivery, unsubscribe, and delete your account and data, with daily window and timezone choices next."],
  ["next","","Slice 6 · A proper app","A cleaner look: app navigation, an account menu, book covers, and the streak and settings screens."],
+ ["next","","Ratings and related titles","Rate a summary and see which classic to pick up next."],
  ["next","","Alpha","Friends and family invited. Fourteen days of evidence, then a decision."]
 ];
 const NOW=[
- ["ok","Telegram bot connected to receive and answer messages"],
- ["ok","One-tap account linking via Telegram login with fallback code"],
- ["ok","Summary delivery on Telegram with automatic fallback to email"],
- ["ok","Unlink option in account settings and stop command in chat"],
- ["ok","Automated acceptance tests and independent code review"],
- ["ok","Account linking verified on a real phone"],
- ["","Confirmation of pilot delivery to a real inbox"]
+ ["ok","Delete your account from Settings, with a confirmation step and a confirmation email"],
+ ["ok","Deleting an account closes its open requests; only anonymous counts are kept"],
+ ["ok","A single friendly note while your current book is still active"],
+ ["wip","Checking that a deletion finishes on its own overnight"],
+ ["","Choose your daily window and timezone in Settings"],
+ ["","Rate a summary and find related titles"]
 ];
 const TEAM=[["Tyrion","Chief of Staff & Orchestrator"],["Varys","Program Manager"],["Sansa","Senior Product Manager"],["Arya","Frontend Engineer"],["Gendry","Backend Engineer"],["Bran","Principal Architect"],["Jon","Privacy & Security Officer"],["Brienne","QA & Validation Lead"],["Samwell","Content & Rights Lead"],["Margaery","Growth & Marketing Lead"],["Missandei","Product Designer (UX/UI)"]];
 document.getElementById("path").innerHTML=PATH.map(([s,w,t,d])=>`<li class="${s}"${s==="now"?' aria-current="step"':""}><span class="lamp"></span><div class="when">${w}</div><h3>${t}<span class="pill">${s==="done"?"Done":s==="now"?"Building":"Next"}</span></h3><p>${d}</p></li>`).join("");
