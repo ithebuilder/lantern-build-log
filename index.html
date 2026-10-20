@@ -114,7 +114,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offs
 <h2>Right now</h2>
 <div class="now-box">
   <h3>Slice 5: Settings and deletion</h3>
-  <p class="now-desc">Your account in one place: pause delivery, unsubscribe, delete your account and data, and soon choose your daily window and timezone.</p>
+  <p class="now-desc">Your account in one place: change your daily window and timezone, pause delivery, unsubscribe, or delete your account and data.</p>
   <ul id="now"></ul>
 </div>
 
@@ -146,18 +146,19 @@ const PATH=[
  ["done","6 Oct 2026","Slice 2 · Delivery","Catalogue, requesting a book, scheduling into your window, email delivery, the reading page."],
  ["done","17 Oct 2026","Slice 3 · Telegram","Link your Telegram and receive your summaries there."],
  ["done","17 Oct 2026","Slice 4 · Streaks and the leaderboard","Finish a book, keep a reading streak, and opt in to a small leaderboard."],
- ["now","in progress","Slice 5 · Settings and deletion","Pause delivery, unsubscribe, and delete your account and data, with daily window and timezone choices next."],
+ ["now","in progress","Slice 5 · Settings and deletion","Delete your account, change your daily window and timezone, pause delivery, and unsubscribe, all in Settings."],
  ["next","","Slice 6 · A proper app","A cleaner look: app navigation, an account menu, book covers, and the streak and settings screens."],
  ["next","","Ratings and related titles","Rate a summary and see which classic to pick up next."],
  ["next","","Alpha","Friends and family invited. Fourteen days of evidence, then a decision."]
 ];
 const NOW=[
- ["ok","Delete your account from Settings, with a confirmation step and a confirmation email"],
+ ["ok","Delete your account in Settings by typing DELETE to confirm"],
+ ["ok","Choose your daily window and timezone in Settings"],
  ["ok","Deleting an account closes its open requests; only anonymous counts are kept"],
  ["ok","A single friendly note while your current book is still active"],
- ["wip","Checking that a deletion finishes on its own overnight"],
- ["","Choose your daily window and timezone in Settings"],
- ["","Rate a summary and find related titles"]
+ ["wip","Confirming that a deletion finishes on its own overnight"],
+ ["","A short grace period to change your mind before a deletion goes ahead"],
+ ["","Keep your account, or start over, when you sign in during that grace period"]
 ];
 const TEAM=[["Tyrion","Chief of Staff & Orchestrator"],["Varys","Program Manager"],["Sansa","Senior Product Manager"],["Arya","Frontend Engineer"],["Gendry","Backend Engineer"],["Bran","Principal Architect"],["Jon","Privacy & Security Officer"],["Brienne","QA & Validation Lead"],["Samwell","Content & Rights Lead"],["Margaery","Growth & Marketing Lead"],["Missandei","Product Designer (UX/UI)"]];
 document.getElementById("path").innerHTML=PATH.map(([s,w,t,d])=>`<li class="${s}"${s==="now"?' aria-current="step"':""}><span class="lamp"></span><div class="when">${w}</div><h3>${t}<span class="pill">${s==="done"?"Done":s==="now"?"Building":"Next"}</span></h3><p>${d}</p></li>`).join("");
