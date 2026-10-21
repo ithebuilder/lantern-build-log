@@ -152,14 +152,13 @@ const PATH=[
  ["next","","Alpha","Friends and family invited. Fourteen days of evidence, then a decision."]
 ];
 const NOW=[
- ["ok","Delete your account in Settings by typing DELETE to confirm"],
  ["ok","Choose your daily window and timezone in Settings, with older browser timezone names now recognised"],
- ["ok","Deleting an account closes its open requests; only anonymous counts are kept"],
- ["ok","A short grace period to change your mind before a deletion goes ahead"],
- ["ok","Keep your account when you sign in during that grace period"],
- ["wip","Start over fresh when you sign in during that grace period"],
+ ["ok","Delete your account in Settings by typing DELETE; open requests close and only anonymous counts are kept"],
+ ["ok","A short grace period to change your mind: sign back in to keep your account or start over fresh"],
  ["ok","A single friendly note while your current book is still active"],
- ["wip","Confirming that a deletion finishes on its own overnight"]
+ ["wip","Confirming that a deletion finishes on its own overnight, and clearing old delivery records after a set time"],
+ ["wip","Measuring anything only if you have agreed to it"],
+ ["wip","A sign-in confirmation page that shows a partly hidden email, so you know which account you are using"]
 ];
 const TEAM=[["Tyrion","Chief of Staff & Orchestrator"],["Varys","Program Manager"],["Sansa","Senior Product Manager"],["Arya","Frontend Engineer"],["Gendry","Backend Engineer"],["Bran","Principal Architect"],["Jon","Privacy & Security Officer"],["Brienne","QA & Validation Lead"],["Samwell","Content & Rights Lead"],["Margaery","Growth & Marketing Lead"],["Missandei","Product Designer (UX/UI)"]];
 document.getElementById("path").innerHTML=PATH.map(([s,w,t,d])=>`<li class="${s}"${s==="now"?' aria-current="step"':""}><span class="lamp"></span><div class="when">${w}</div><h3>${t}<span class="pill">${s==="done"?"Done":s==="now"?"Building":"Next"}</span></h3><p>${d}</p></li>`).join("");
