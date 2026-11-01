@@ -90,12 +90,12 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offs
 
 <h1>Five-minute classic book summaries, on your schedule.</h1>
 <p class="lede">A free summary arrives in the part of your day you choose. Lantern helps you decide which classic to read next. It is a small, free, personal project. The books are public domain. The summaries are AI-written and checked against the original text.</p>
-<div class="status"><span class="dot"></span> Building: Settings and deletion, with a grace period (slice 5 of 6)</div>
-<div class="updated" id="updated">Last updated 22 Oct 2026</div>
+<div class="status"><span class="dot"></span> Building: the last checks before the first friends and family are invited</div>
+<div class="updated" id="updated">Last updated 1 Nov 2026</div>
 
 <h2>How it will work</h2>
 <div class="steps">
-  <div class="step"><div class="k">1 · Choose</div><h3>Pick a book, or let us surprise you</h3><p>Twelve classics to start, from Tagore to Sherlock Holmes, with more on the way. One summary at a time.</p></div>
+  <div class="step"><div class="k">1 · Choose</div><h3>Pick a book, or let us surprise you</h3><p>Fifty classics to start, from Tagore to Sherlock Holmes, with more on the way. One summary at a time.</p></div>
   <div class="step"><div class="k">2 · Wait</div><h3>It arrives in your window</h3><p>Morning, midday, evening or wind-down, in your timezone. Never between 22:00 and 07:00.</p></div>
   <div class="step"><div class="k">3 · Read</div><h3>Five minutes, then decide</h3><p>Finish it on Telegram or the web, rate it, and see where to find the full book for free.</p></div>
 </div>
@@ -113,8 +113,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offs
 
 <h2>Right now</h2>
 <div class="now-box">
-  <h3>Slice 5: Settings and deletion</h3>
-  <p class="now-desc">Your account in one place: change your daily window and timezone, pause delivery, unsubscribe, or delete your account and data.</p>
+  <h3>The road to the first invites</h3>
+  <p class="now-desc">The reading experience is built and tested end to end. What is left is proving it with real people: a live run of on-time delivery, a simple view of how the trial is going, and the first small invite.</p>
   <ul id="now"></ul>
 </div>
 
@@ -123,7 +123,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offs
 <div class="team" id="team"></div>
 
 <h2>Can I try it?</h2>
-<div class="note">Not yet. The first readers will be invited friends and family once slices 1 to 6 pass their checks. This page will say when that changes. Questions or privacy requests: <a class="mono" href="mailto:privacy@liftkaradey.top">privacy@liftkaradey.top</a></div>
+<div class="note">Not yet, but close. The first readers will be invited friends and family, a small group, once the last checks pass. This page will say when that changes. Questions or privacy requests: <a class="mono" href="mailto:privacy@liftkaradey.top">privacy@liftkaradey.top</a></div>
 
 <footer>
   <div class="foot-links">
@@ -146,19 +146,19 @@ const PATH=[
  ["done","6 Oct 2026","Slice 2 · Delivery","Catalogue, requesting a book, scheduling into your window, email delivery, the reading page."],
  ["done","17 Oct 2026","Slice 3 · Telegram","Link your Telegram and receive your summaries there."],
  ["done","17 Oct 2026","Slice 4 · Streaks and the leaderboard","Finish a book, keep a reading streak, and opt in to a small leaderboard."],
- ["now","in progress","Slice 5 · Settings and deletion","Change your daily window and timezone, pause delivery, unsubscribe, or delete your account, with a short grace period to change your mind."],
- ["next","","Slice 6 · A proper app","A cleaner look: app navigation, an account menu, book covers, and the streak and settings screens."],
- ["next","","Ratings and related titles","Rate a summary and see which classic to pick up next."],
- ["next","","Alpha","Friends and family invited. Fourteen days of evidence, then a decision."]
+ ["done","Oct 2026","Slice 5 · Settings and deletion","Change your daily window and timezone, pause delivery, unsubscribe, or delete your account, with a short grace period to change your mind."],
+ ["done","1 Nov 2026","Fifty classics and new covers","The catalogue grew from twelve to fifty titles, each cleared for rights and checked, with a matching set of book covers."],
+ ["now","in progress","Last checks before alpha","A live test of on-time delivery in three timezones, a simple view of how the trial is going, and sending a first real email to a real inbox."],
+ ["next","","Alpha","Friends and family invited. Fourteen days of evidence, then a decision."],
+ ["next","","After alpha","Related titles on the reading page, a cleaner app look, adjustable text size."]
 ];
 const NOW=[
- ["ok","Choose your daily window and timezone in Settings, with older browser timezone names now recognised"],
- ["ok","Delete your account in Settings by typing DELETE; open requests close and only anonymous counts are kept"],
- ["ok","A short grace period to change your mind: sign back in to keep your account or start over fresh"],
- ["ok","A single friendly note while your current book is still active"],
- ["wip","Confirming that a deletion finishes on its own overnight, and clearing old delivery records after a set time"],
- ["wip","Measuring anything only if you have agreed to it"],
- ["wip","A sign-in confirmation page that shows a partly hidden email, so you know which account you are using"]
+ ["ok","Sign in with a link, choose your window, request a book, read it and rate it: the whole loop is built and tested"],
+ ["ok","Fifty classics, each cleared under Indian and US law, each summary checked against the source text"],
+ ["ok","Delete your account yourself, with a short grace period; backups may keep your data for up to 35 days"],
+ ["wip","A live three-day test that summaries arrive inside the chosen window in three timezones"],
+ ["wip","A simple private view for the builder: sign-ups, active readers, summaries read, repeat reading"],
+ ["wip","Sending the first real sign-in email to a real inbox and checking it does not land in spam"]
 ];
 const TEAM=[["Tyrion","Chief of Staff & Orchestrator"],["Varys","Program Manager"],["Sansa","Senior Product Manager"],["Arya","Frontend Engineer"],["Gendry","Backend Engineer"],["Bran","Principal Architect"],["Jon","Privacy & Security Officer"],["Brienne","QA & Validation Lead"],["Samwell","Content & Rights Lead"],["Margaery","Growth & Marketing Lead"],["Missandei","Product Designer (UX/UI)"]];
 document.getElementById("path").innerHTML=PATH.map(([s,w,t,d])=>`<li class="${s}"${s==="now"?' aria-current="step"':""}><span class="lamp"></span><div class="when">${w}</div><h3>${t}<span class="pill">${s==="done"?"Done":s==="now"?"Building":"Next"}</span></h3><p>${d}</p></li>`).join("");
